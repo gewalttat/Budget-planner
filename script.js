@@ -15,10 +15,7 @@ let appData = {
     budget: money,
     timeData: time,
     expenses: {},
-    optionalExpenses: {
-        1 : "",
-        2 : ""
-    },
+    optionalExpenses: {},
     income: [],
     savings: true,
     chooseExpenses: function() {
@@ -67,11 +64,29 @@ let appData = {
             }
          }
     },
-    chooseIncome: function(){
-       let items = prompt("Что принесет дополнительный доход? (Перечислите через запятую)","");
-       appData.income = items.split(","); 
+    chooseIncome: function() {
+        for (var i = 0; i < 1; i++) {
+       var items = prompt("Что принесет дополнительный доход? (Перечислите через запятую)","");
+       appData.income.push(prompt ("Может что-то ещё?", ""));
+       if(typeof(items)==='string' && (typeof(items) != null && items != '')) {
+           console.log("ответ принят");
+       } else {
+        i = i - 1;
+               alert("введите корректные данные");
+       }
+       appData.income = items.split(",");
+       appData.income.sort();
     }
-    };
+       appData.income.forEach(function(items, i, income) {
+        for (let key of income) {
+            console.log(key + "Cпособ дополнительного заработка: " + items);
+        }
+    });
+    for (let key in appData) {
+        console.log("свойство " + key + " имеет значение " + appData[key]);
+    }
+    console.log("всего в объекте " + Object.keys(appData).length + " пары ключ-значение");
+}};
 
 
 
