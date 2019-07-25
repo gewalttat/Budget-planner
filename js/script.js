@@ -93,7 +93,7 @@ countButton.addEventListener('click', function() {
     //проверка на NaN
     if (appData.budget != undefined) {
         //формула подсчета с округлением
-appData.moneyPerDay = (appData.budget / 30).toFixed();
+appData.moneyPerDay = ((appData.budget - expensesValue.textContent) / 30).toFixed();
 //dayBudgetValue ловит moneyPerDay. присвоение.
 dayBudgetValue.textContent = appData.moneyPerDay;
 
@@ -104,7 +104,6 @@ if(appData.moneyPerDay < 100) {
 } else if (appData.moneyPerDay > 2000) {
     levelValue.textContent = "высокий уровень дохода";
 }else {
-    //вероятно что здесь лучше смотрелось бы .textContent, но хочется!
     levelValue.textContent = 'произошла ошибка в вводе данных';
 }}else {
     levelValue.textContent = 'произошла ошибка в вводе данных';
