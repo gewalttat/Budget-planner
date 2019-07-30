@@ -121,6 +121,7 @@ incomeValue.textContent = appData.income;
 
 checkSavings.addEventListener('click', function() {
 //CHECKBOX_bicycle.jpg ¯\_(ツ)_/¯ 
+//проверяет, включена ли галочка чекбокса.
     if (appData.savings == true) {
     appData.savings = false;
 } else {
