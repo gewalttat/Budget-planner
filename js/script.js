@@ -151,7 +151,8 @@ if(appData.savings == true){
     //вывод в int
     let sum = +sumValue.value,
     percent = +percentValue.value;
-    //формула
+ 
+
     appData.monthIncome = sum/100/12*percent;
     appData.yearIncome = sum/100*percent;
     //вывод с округлением до десятых
